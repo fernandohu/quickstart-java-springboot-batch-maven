@@ -1,12 +1,17 @@
 # Java with SpringBoot + Maven Quickstart
 
-Project startup with Docker, Java and Spring Boot + Maven.
+Project startup with Docker, Java and Spring Boot Batch + Maven.
 
-The goal of this project is to have a local environment where it is possible to build, run the Spring Boot-CLI and run the application from the command line.
+When this application is run, an in-memory database is automatically set up with content that is in the following file:
 
-In other words, you will have to manually setup your IDE and integration with JDK.
+/app/src/resources/schema-all.sql
 
-Besides this, with the default configuration, the `.m2` folder will be shared between the host machine and the Docker container and will be cached in multiple runs. 
+The Spring Boot batch application is configured with one Job that has one single Step (see BatchConfiguration).
+
+The Step reads data from the "people" table (PersonItemReader), then it processes the records using a `processor` 
+(PersonItemProcessor) and finally it updates the database using a `writer` (PersonItemWriter).
+
+After the end of the Job execution, the JobCompletionNotificationListener is triggered to notify the end of the execution.
 
 ## Requirements
 
@@ -17,7 +22,7 @@ Besides this, with the default configuration, the `.m2` folder will be shared be
 ## Installation
 
 ```
-git clone git@github.com:fernandohu/quickstart-java-springboot-maven.git 
+git clone git@github.com:fernandohu/quickstart-java-springboot-batch-maven.git 
 docker-compose up
 ```
 
