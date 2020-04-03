@@ -1,17 +1,18 @@
-# Java with SpringBoot + Maven Quickstart
+# Java with Spring Boot Batch + Maven Quickstart
 
 Project startup with Docker, Java and Spring Boot Batch + Maven.
 
 When this application is run, an in-memory database is automatically set up with content that is in the following file:
 
-/app/src/resources/schema-all.sql
+`/app/src/resources/schema-all.sql`
 
-The Spring Boot batch application is configured with one Job that has one single Step (see BatchConfiguration).
+The Spring Boot batch application is configured with one Job that has one single Step (see `BatchConfiguration`).
 
-The Step reads data from the "people" table (PersonItemReader), then it processes the records using a `processor` 
-(PersonItemProcessor) and finally it updates the database using a `writer` (PersonItemWriter).
+The Step reads data from the "people" table (`PersonItemReader`), then it processes the records using a `processor` 
+(`PersonItemProcessor`) and finally it updates the database using a `writer` (`PersonItemWriter`).
 
-After the end of the Job execution, the JobCompletionNotificationListener is triggered to notify the end of the execution.
+After the end of the Job execution, the class `JobCompletionNotificationListener` is triggered to notify the end of 
+the execution.
 
 ## Requirements
 
