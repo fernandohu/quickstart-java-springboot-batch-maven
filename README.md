@@ -14,6 +14,8 @@ The Step reads data from the "people" table (`PersonItemReader`), then it proces
 After the end of the Job execution, the class `JobCompletionNotificationListener` is triggered to notify the end of 
 the execution.
 
+The batch application uppercase all information that is in the database (you can see it in the logs).
+
 ## Requirements
 
 - Git

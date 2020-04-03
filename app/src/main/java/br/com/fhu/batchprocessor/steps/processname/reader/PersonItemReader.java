@@ -26,7 +26,7 @@ public class PersonItemReader {
                 .name("personItemReader")
                 .sql(SQL)
                 .rowMapper(new PersonRowMapper())
-                .maxRows(2)
+                .maxRows(3)
                 .build();
     }
 }
